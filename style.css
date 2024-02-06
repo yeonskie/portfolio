@@ -86,7 +86,6 @@ button {
 
 .hidden {
     opacity: 0;
-    transition: opacity 0.3s ease;
 }
 
 .firstDiv {
@@ -171,10 +170,6 @@ body.dark-mode .dropdown-selected {
   border:1px solid #f0f0f0;
 }
 
-.secondDiv {
-  position:absolute;
-}
-
 body.light-mode .dropdown-list {
   color:black;
   background-color:white;
@@ -206,14 +201,47 @@ a {
 
 .dropdown-list span:hover {
   background-color: #d4d4d4;
+  color:black;
 }
 
 body.light-mode .dropdown-list span:hover {
   background-color: black;
-  color:white;
+  color:#d4d4d4;
 }
 
-body.dark-mode .dropdown-list span:hover {
-  background-color: white;
+body.light-mode .dropdown-list a:hover {
   color:black;
+}
+
+
+body.dark-mode .dropdown-list span:hover {
+  background-color: #d4d4d4;
+  color:black;
+}
+
+body.dark-mode .bottom-bar {
+  border-top: 1px solid white;
+}
+
+.hidden {
+  right:0;
+  font-family: "cofo-sans-variable", sans-serif;
+  font-variation-settings: "slnt" 0, "wght" 400;
+}
+
+.leftcornerbox {
+  position:absolute;
+}
+
+.hiddendiv {
+  position:fixed;
+  right:0;
+}
+
+/* Existing CSS styles */
+
+/* Style for the span on hover */
+.dropdown-list span:hover {
+  background-color: #ffffff; /* White background */
+  color: #000000; /* Black text */
 }

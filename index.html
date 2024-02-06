@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>idk</title>
+    <title>courtney te</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="png" href="">
     <link rel="stylesheet" href="https://use.typekit.net/bdh0rwu.css">
     <link rel="stylesheet" href="https://use.typekit.net/hya6yic.css">
     </head>
     <body>
+      <div class="leftcornerbox"></div>
+      <div id="hiddenDiv" class="hidden">This is the hidden div</div>
       <button style="top:15px;left:15px;" id="toggleModeButton" onclick="toggleMode()">switch up the lighting?</button>
-    <div class="container">
+      <div class="container">
         <div class="bottom-bar">
             <div class="column"><h1>courtney te</h1></div>
             <div class="dropdown">
                 <div class="dropdown-selected"><< guide me >></div>
                 <div class="dropdown-list">
                     <span><a href="works.html">works</a></span>
-                    <span><a href="works.html">about me</a></span>
-                    <span><a href="works.html">where to find me</a></span>
-                    <span><a href="works.html">random</a></span>
+                    <span><a href="about.html">about me</a></span>
+                    <span><a href="contact.html">where to find me</a></span>
+                    <span class="link-like" onclick="randomPage()">!surprise me!</span>
                 </div>
             </div>
             <div style="text-align:right;margin-right:20px;margin-top:20px;" class="column">
-                <div id="firstDiv">fun fact!</div>
-                <div id="secondDiv" class="hidden">This is the hidden div</div>
+                <div style="padding-bottom:15px;" class="fun-fact" onclick="showHiddenDiv()">fun fact!</div>
             </div>
         </div>
     </div>
@@ -280,6 +281,43 @@ function newColour() {
             event.stopPropagation(); // Prevent the click event from bubbling up to the document level
         });
     });
+
+    function randomPage() {
+            // List of your HTML pages
+            var pages = [
+                "works.html",
+                "about.html",
+                "contact.html",
+                // Add more pages as needed
+            ];
+
+            // Generate a random index
+            var randomIndex = Math.floor(Math.random() * pages.length);
+
+            // Get the random page URL
+            var randomPageUrl = pages[randomIndex];
+
+            // Redirect to the random page
+            window.location.href = randomPageUrl;
+        }
+
+        function showHiddenDiv() {
+            var hiddenDiv = document.getElementById('hiddenDiv');
+            hiddenDiv.classList.toggle('hidden');
+        }
+
+        function randomPage() {
+            var pages = [
+                "works.html",
+                "about.html",
+                "contact.html",
+            ];
+
+            var randomIndex = Math.floor(Math.random() * pages.length);
+            var randomPageUrl = pages[randomIndex];
+
+            window.location.href = randomPageUrl;
+        }
 
           </script>
     </body>

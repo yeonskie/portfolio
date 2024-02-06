@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="https://use.typekit.net/hya6yic.css">
     </head>
     <body>
-      <div id="hiddenDiv" class="hidden">This is the hidden div</div>
+      <div class="content">
+        <div class="text">
+          hello
+        </div>
+      </div>
       <div class="top-bar">
         <div class="column">
             <button style="top:15px;left:15px;" id="toggleModeButton" onclick="toggleMode()">switch up the lighting?</button>
@@ -18,7 +22,8 @@
             <marquee style="width:200px;">currently working on: <a href="http://21yearsofgirlhood.com">21yearsofgirlhood</a>, <a href="http://luckyonezine.com">LUCKY ONE ZINE</a></marquee>
         </div>
         <div style="text-align:right;padding-right:20px;" class="column">
-            hello
+          <div id="clickableDiv" onclick="toggleVisibility()">fun fact!</div>
+          <div id="hiddenDiv" class="hidden">this website was hand-coded!</div>
         </div>
       <div class="container">
         <div class="bottom-bar">
@@ -34,7 +39,7 @@
                 </div>
             </div>
             <div style="text-align:right;margin-right:20px;margin-top:20px;" class="column">
-                <div style="padding-bottom:15px;" class="fun-fact" onclick="showHiddenDiv()">fun fact!</div>
+                <p style="padding-bottom:15px;">© 2024</p>
             </div>
         </div>
     </div>
@@ -328,6 +333,11 @@ function newColour() {
 
             window.location.href = randomPageUrl;
         }
+
+        function toggleVisibility() {
+  var hiddenDiv = document.getElementById('hiddenDiv');
+  hiddenDiv.classList.toggle('visible');
+}
 
           </script>
     </body>

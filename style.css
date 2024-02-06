@@ -21,7 +21,8 @@ body {
     height: 50px;
     width: 100%;
     padding: 5px;
-    background-color:#f0f0f0
+    background-color:#f0f0f0;
+    border-top: 1px solid black;
   }
   
   .column {
@@ -48,6 +49,7 @@ a {
     padding: 8px;
     border-radius: 4px;
     text-align:center;
+    border:1px solid black;
   }
 
   .dropdown-selected:hover {
@@ -61,13 +63,14 @@ a {
     width: 100%;
     padding: 0;
     margin: 0;
-    border: 1px solid #f0f0f0;
+    border: 1px solid #000000;
     border-bottom: none;
     border-radius: 4px 4px 0 0;
     display: none;
     text-align:center;
+    background-color:#f0f0f0;
   }
-  
+
   .dropdown-list span {
     display: block;
     padding: 8px;
@@ -79,7 +82,6 @@ a {
 button {
     font-family: "cofo-sans-variable", sans-serif;
     font-variation-settings: "slnt" 0, "wght" 400;
-    border:none;
 }
 
 .hidden {
@@ -139,4 +141,79 @@ button:hover {
 .bottom-bar.dark-mode {
   background-color: black; /* Dark mode background color */
   color: white; /* Dark mode text color */
+}
+
+/* Light mode button styles */
+body.light-mode button {
+  color: black; /* Button text color in light mode */
+  background-color: white; /* Button background color in light mode */
+  border: 1px solid black;
+}
+
+/* Dark mode button styles */
+body.dark-mode button {
+  color: white; /* Button text color in dark mode */
+  background-color: black; /* Button background color in dark mode */
+  border: 1px solid white;
+}
+
+/* Light mode dropdown selected styles */
+body.light-mode .dropdown-selected {
+  color: black; /* Text color of the selected item in light mode */
+  background-color: white; /* Background color of the selected item in light mode */
+  border:1px solid black;
+}
+
+/* Dark mode dropdown selected styles */
+body.dark-mode .dropdown-selected {
+  color: white; /* Text color of the selected item in dark mode */
+  background-color: black; /* Background color of the selected item in dark mode */
+  border:1px solid #f0f0f0;
+}
+
+.secondDiv {
+  position:absolute;
+}
+
+body.light-mode .dropdown-list {
+  color:black;
+  background-color:white;
+  border-radius:5px;
+}
+
+
+body.dark-mode .dropdown-list {
+  color:white;
+  background-color:black;
+  border: 1px solid white;
+  border-radius:5px;
+}
+
+body.light-mode a {
+  text-decoration:none;
+  color:black;
+}
+
+body.dark-mode a {
+  text-decoration:none;
+  color:white;
+}
+
+a {
+  text-decoration:none;
+  color:black;
+}
+
+.dropdown-list span:hover {
+  background-color: #d4d4d4;
+}
+
+body.light-mode .dropdown-list span:hover {
+  background-color: black;
+  color:white;
+}
+
+body.dark-mode .dropdown-list span:hover {
+  background-color: white;
+  color:black;
 }

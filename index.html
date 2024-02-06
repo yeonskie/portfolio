@@ -8,25 +8,25 @@
     <link rel="stylesheet" href="https://use.typekit.net/hya6yic.css">
     </head>
     <body>
-        <div class="container">
-            <div class="bottom-bar">
-              <div class="column"><h1>courtney te</h1></div>
-              <div class="dropdown">
+      <button id="toggleModeButton" onclick="toggleMode()">switch up the lighting?</button>
+    <div class="container">
+        <div class="bottom-bar">
+            <div class="column"><h1>courtney te</h1></div>
+            <div class="dropdown">
                 <div class="dropdown-selected"><< guide me >></div>
                 <div class="dropdown-list">
-                  <span>works</span>
-                  <span>about me</span>
-                  <span>where to find me</span>
-                  <span>random</span>
+                    <span>works</span>
+                    <span>about me</span>
+                    <span>where to find me</span>
+                    <span>random</span>
                 </div>
-              </div>
-              <div style="text-align:right;margin-right:20px;margin-top:20px;" class="column">
+            </div>
+            <div style="text-align:right;margin-right:20px;margin-top:20px;" class="column">
                 <div id="firstDiv">fun fact!</div>
-<div id="secondDiv" class="hidden">This is the hidden div</div>
-
+                <div id="secondDiv" class="hidden">This is the hidden div</div>
             </div>
-            </div>
-          </div>
+        </div>
+    </div>
           <script>
 
 
@@ -221,80 +221,65 @@ function newColour() {
 </script>
  
 <script type="text/javascript">
-//form tags to omit in NS6+:
-var omitformtags=["input", "textarea", "select"]
- 
-omitformtags=omitformtags.join("|")
- 
-function disableselect(e){
-if (omitformtags.indexOf(e.target.tagName.toLowerCase())==-1)
-return false
-}
- 
-function reEnable(){
-return true
-}
- 
-if (typeof document.onselectstart!="undefined")
-document.onselectstart=new Function ("return false")
-else{
-document.onmousedown=disableselect
-document.onmouseup=reEnable
-}
+    function toggleMode() {
+        console.log('Button clicked'); // Check if this message appears in the console
+        var body = document.body;
+        var bottomBar = document.querySelector('.bottom-bar');
 
+        // Toggle between light and dark mode
+        body.classList.toggle('light-mode');
+        body.classList.toggle('dark-mode');
 
-            document.addEventListener("click", function(event) {
-  var dropdowns = document.querySelectorAll(".dropdown");
-  dropdowns.forEach(function(dropdown) {
-    if (!dropdown.contains(event.target)) {
-      dropdown.querySelector(".dropdown-list").style.display = "none";
-    }
-  });
-});
+        // Toggle bottom bar mode
+        bottomBar.classList.toggle('light-mode');
+        bottomBar.classList.toggle('dark-mode');
 
-document.addEventListener("click", function(event) {
-  var dropdowns = document.querySelectorAll(".dropdown");
-  dropdowns.forEach(function(dropdown) {
-    if (!dropdown.contains(event.target)) {
-      dropdown.querySelector(".dropdown-list").style.display = "none";
-    }
-  });
-});
-
-document.querySelectorAll(".dropdown").forEach(function(dropdown) {
-    var selected = dropdown.querySelector(".dropdown-selected");
-    var list = dropdown.querySelector(".dropdown-list");
-
-    // Toggle dropdown visibility when clicking on the selected option
-    selected.addEventListener("click", function() {
-        toggleDropdown(list);
-    });
-
-    // Close dropdown when clicking on an option
-    list.addEventListener("click", function(event) {
-        if (event.target.tagName === "SPAN") {
-            selected.textContent = event.target.textContent;
-            toggleDropdown(list); // Close the dropdown after selecting an option
+        // Toggle button text
+        var button = document.getElementById('toggleModeButton');
+        if (body.classList.contains('light-mode')) {
+            button.textContent = 'light mode';
+        } else {
+            button.textContent = 'dark mode';
         }
+    }
+
+    // Function to toggle dropdown visibility
+    function toggleDropdown(list) {
+        list.style.display = (list.style.display === "block") ? "none" : "block";
+    }
+
+    document.addEventListener("click", function(event) {
+        var dropdowns = document.querySelectorAll(".dropdown");
+        dropdowns.forEach(function(dropdown) {
+            if (!dropdown.contains(event.target)) {
+                dropdown.querySelector(".dropdown-list").style.display = "none";
+            }
+        });
     });
 
-    // Close dropdown when clicking on the close button
-    dropdown.querySelector(".close-dropdown").addEventListener("click", function(event) {
-        toggleDropdown(list);
-        event.stopPropagation(); // Prevent the click event from bubbling up to the document level
+    document.querySelectorAll(".dropdown").forEach(function(dropdown) {
+        var selected = dropdown.querySelector(".dropdown-selected");
+        var list = dropdown.querySelector(".dropdown-list");
+
+        // Toggle dropdown visibility when clicking on the selected option
+        selected.addEventListener("click", function() {
+            toggleDropdown(list);
+        });
+
+        // Close dropdown when clicking on an option
+        list.addEventListener("click", function(event) {
+            if (event.target.tagName === "SPAN") {
+                selected.textContent = event.target.textContent;
+                toggleDropdown(list); // Close the dropdown after selecting an option
+            }
+        });
+
+        // Close dropdown when clicking on the close button
+        dropdown.querySelector(".close-dropdown").addEventListener("click", function(event) {
+            toggleDropdown(list);
+            event.stopPropagation(); // Prevent the click event from bubbling up to the document level
+        });
     });
-});
-
-// Function to toggle dropdown visibility
-function toggleDropdown(list) {
-    list.style.display = (list.style.display === "block") ? "none" : "block";
-}
-
-document.getElementById("firstDiv").addEventListener("click", function() {
-    var secondDiv = document.getElementById("secondDiv");
-    secondDiv.classList.toggle("hidden");
-});
-
 
           </script>
     </body>

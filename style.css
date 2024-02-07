@@ -2,6 +2,7 @@ body {
     font-family: "cofo-sans-variable", sans-serif;
     font-variation-settings: "slnt" 0, "wght" 400;
     background-color:#f0f0f0;
+    overflow:hidden;
 }
 
 .container {
@@ -314,11 +315,9 @@ marquee a:hover {
 
 .content {
   position:absolute;
-  top:0px;
   left:40px;
   bottom:40px;
   right:40px;
-  text-align:justify;
 }
 
 .hidden {
@@ -396,19 +395,10 @@ button {
 }
 
 
-/* Container styles */
-.everything {
-  position: relative; /* Positioning context for overlay */
-  height: 200px; /* Adjust height as needed */
-  width: 200px; /* Adjust width as needed */
-  margin: 0 auto; /* Center the container horizontally */
-  text-align: center; /* Center the contents horizontally */
-}
-
 /* Overlay div styles */
 .overlay {
   position: absolute;
-  top: 33%;
+  top: 27%;
   width: 200px;
   height: 100%;
   text-align:center;
@@ -459,3 +449,52 @@ a:hover {
 .box a:hover {
   color:white;
 }
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0; /* Start from fully transparent */
+  }
+  to {
+    opacity: 1; /* End with full opacity */
+  }
+}
+
+.content {
+  opacity: 0; /* Start with transparency */
+  animation: fadeInAnimation 3s ease-in-out forwards; /* Apply animation */
+}
+
+h2 {
+  animation: fadeInAnimation 3s ease-in-out forwards;
+}
+
+p {
+  animation: fadeInAnimation 5s ease-in-out forwards;
+}
+
+.text{
+  animation: fadeInAnimation 6s ease-in-out forwards;
+}
+
+body.dark-mode .box a:hover {
+  color:black;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:100%;
+}
+
+
+.circle2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:105%;
+  height:105%;
+}
+

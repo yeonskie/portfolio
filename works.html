@@ -348,23 +348,39 @@ function newColour() {
 function go() {
     // Get the selected option from the dropdown menu
     var selectedOption = document.querySelector('.dropdown-selected').textContent.trim();
-    
+
+    // Remove the additional characters from the selected option
+    selectedOption = selectedOption.replace(/<<|>>/g, '');
+
     // Perform action based on the selected option
     switch(selectedOption) {
-      case 'works':
-        window.location.href = 'works.html'; // Redirect to works.html
-        break;
-      case 'about me':
-        window.location.href = 'about.html'; // Redirect to about.html
-        break;
-      case 'where to find me':
-        window.location.href = 'contact.html'; // Redirect to contact.html
-        break;
-      default:
-        // Handle other cases or provide a default action
-        break;
+        case 'guide me':
+            // Do nothing or provide a default action
+            break;
+        case 'home':
+            window.location.href = 'index.html'; // Redirect to home page
+            break;
+        case 'design work':
+            window.location.href = 'works.html'; // Redirect to works.html
+            break;
+        case 'writing':
+            window.location.href = 'writing.html'; // Redirect to writing.html
+            break;
+        case 'about me':
+            window.location.href = 'about.html'; // Redirect to about.html
+            break;
+        case 'where to find me':
+            window.location.href = 'contact.html'; // Redirect to contact.html
+            break;
+        case '!surprise me!':
+            randomPage(); // Call the randomPage function
+            break;
+        default:
+            // Handle other cases or provide a default action
+            break;
     }
-  }
+}
+
 
   
           </script>

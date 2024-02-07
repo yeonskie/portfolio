@@ -185,9 +185,12 @@ body.dark-mode a {
 }
 
 a {
-  text-decoration:none;
   color:black;
 }
+
+a:hover {
+    font-style:italic;
+  }
 
 .dropdown-list span:hover {
   background-color: #d4d4d4;
@@ -371,6 +374,10 @@ button {
   height:100%;
 }
 
+body.dark-mode .content {
+    background-color: rgba(0, 0, 0, 0.90)
+}
+
 .text {
   display: flex;
   text-align: center;
@@ -495,19 +502,8 @@ body.dark-mode .box a:hover {
 .portfolio {
   position:absolute;
   top:150px;
-  left:75px;
-  width:250px;
-}
-
-body.dark-mode .content {
-  background-color: rgba(0, 0, 0, 0.90)
-}
-
-.what a {
-    text-decoration:underline;
-}
-
-.portfolio a:hover {
-    font-style:italic;
+  left:100px;
+  right:50px;
+  width:300px;
 }
 

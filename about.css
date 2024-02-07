@@ -503,9 +503,6 @@ body.dark-mode .content {
   background-color: rgba(0, 0, 0, 0.90)
 }
 
-.what a {
-    text-decoration:underline;
-}
 
 .portfolio a:hover {
     font-style:italic;

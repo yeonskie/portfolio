@@ -453,5 +453,9 @@ body.dark-mode a {
 }
 
 a:hover {
+  color:black;
+}
+
+.box a:hover {
   color:white;
 }

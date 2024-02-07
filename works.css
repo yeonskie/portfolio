@@ -506,3 +506,19 @@ body.dark-mode .box a:hover {
 body.dark-mode .content {
   background-color: rgba(0, 0, 0, 0.90)
 }
+
+/* Light mode styles for circle images */
+.circle,
+.circle2 {
+  /* Add your light mode styles here */
+  /* For example: */
+  content: url('circle.svg'); /* Set the default image */
+}
+
+/* Dark mode styles for circle images */
+body.dark-mode .circle,
+body.dark-mode .circle2 {
+  /* Add your dark mode styles here */
+  /* For example: */
+  content: url('whitecircle.svg'); /* Set the dark mode image */
+}

@@ -508,3 +508,19 @@ body.dark-mode .content {
     font-style:italic;
 }
 
+
+/* Light mode styles for circle images */
+.circle,
+.circle2 {
+  /* Add your light mode styles here */
+  /* For example: */
+  content: url('circle.svg'); /* Set the default image */
+}
+
+/* Dark mode styles for circle images */
+body.dark-mode .circle,
+body.dark-mode .circle2 {
+  /* Add your dark mode styles here */
+  /* For example: */
+  content: url('whitecircle.svg'); /* Set the dark mode image */
+}

@@ -372,13 +372,11 @@ button {
 }
 
 .content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Adjust the height as needed */
   background-color: rgba(255, 255, 255, 0.90);
   width:100%;
   left:0;
+  top:30px;
+  position:absolute;
 }
 
 .text {
@@ -464,7 +462,7 @@ a:hover {
 
 .content {
   opacity: 0; /* Start with transparency */
-  animation: fadeInAnimation 3s ease-in-out forwards; /* Apply animation */
+  animation: fadeInAnimation 2s ease-in-out forwards; /* Apply animation */
 }
 
 h2 {

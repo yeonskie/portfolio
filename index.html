@@ -8,9 +8,16 @@
     <link rel="stylesheet" href="https://use.typekit.net/hya6yic.css">
     </head>
     <body>
+      <div class="everything">
       <div class="content">
+        <div class="overlay">
+          <h2 style="bottom:0;">hi there!</h2>
+          <p style="top:0;">what are you here for?</p>
+        </div>
         <div class="text">
-          hello
+          <div class="box"><a href="">design</a></div>
+          <div class="box"><a href="">design</a></div>
+          <div class="box"><a href="">design</a></div>
         </div>
       </div>
       <div class="top-bar">
@@ -18,7 +25,6 @@
             <button style="top:15px;left:15px;" id="toggleModeButton" onclick="toggleMode()">switch up the lighting?</button>
         </div>
         <div class="column">
-            <!-- Add additional elements here -->
             <marquee style="width:200px;">currently working on: <a href="http://21yearsofgirlhood.com">21yearsofgirlhood</a>, <a href="http://luckyonezine.com">LUCKY ONE ZINE</a></marquee>
         </div>
         <div style="text-align:right;padding-right:20px;" class="column">
@@ -32,18 +38,21 @@
             <div class="dropdown">
                 <div class="dropdown-selected"><< guide me >></div>
                 <div class="dropdown-list">
-                    <span><a href="works.html">works</a></span>
+                    <span href="works.html">works</span>
                     <span><a href="about.html">about me</a></span>
                     <span><a href="contact.html">where to find me</a></span>
                     <span class="link-like" onclick="randomPage()">!surprise me!</span>
                 </div>
+                <button style="border:none;" id="goButton" onclick="go()">Go</button>
             </div>
             <div style="text-align:right;margin-right:20px;margin-top:20px;" class="column">
                 <p style="padding-bottom:15px;">© 2024</p>
             </div>
         </div>
     </div>
-          <script>
+  </div>
+    </div>
+  <script>
 
 
 var colour="#FF6699";
@@ -339,6 +348,28 @@ function newColour() {
   hiddenDiv.classList.toggle('visible');
 }
 
+function go() {
+    // Get the selected option from the dropdown menu
+    var selectedOption = document.querySelector('.dropdown-selected').textContent.trim();
+    
+    // Perform action based on the selected option
+    switch(selectedOption) {
+      case 'works':
+        window.location.href = 'works.html'; // Redirect to works.html
+        break;
+      case 'about me':
+        window.location.href = 'about.html'; // Redirect to about.html
+        break;
+      case 'where to find me':
+        window.location.href = 'contact.html'; // Redirect to contact.html
+        break;
+      default:
+        // Handle other cases or provide a default action
+        break;
+    }
+  }
+
+  
           </script>
     </body>
 </html>

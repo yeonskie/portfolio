@@ -2,7 +2,6 @@ body {
     font-family: "cofo-sans-variable", sans-serif;
     font-variation-settings: "slnt" 0, "wght" 400;
     background-color:#f0f0f0;
-    overflow-y:hidden;
 }
 
 .container {
@@ -78,11 +77,6 @@ a {
   }
   
   
-
-button {
-    font-family: "cofo-sans-variable", sans-serif;
-    font-variation-settings: "slnt" 0, "wght" 400;
-}
 
 .hidden {
     opacity: 0;
@@ -320,7 +314,7 @@ marquee a:hover {
 
 .content {
   position:absolute;
-  top:100px;
+  top:0px;
   left:40px;
   bottom:40px;
   right:40px;
@@ -337,4 +331,127 @@ marquee a:hover {
 
 .visible {
   opacity: 1;
+}
+
+h1 {
+  font-size:150px;
+}
+
+marquee h1 {
+  height:5%;
+}
+
+button {
+  font-family: "cofo-sans-variable", sans-serif;
+  font-variation-settings: "slnt" 0, "wght" 400;
+}
+/* Add this to your existing stylesheet */
+
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-list {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #000000;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  display: none;
+  text-align:center;
+}
+
+#goButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust the height as needed */
+}
+
+.text {
+  display: flex;
+  text-align: center;
+
+}
+
+/* Style for each box */
+.box {
+  flex: 1; /* Distribute space evenly among the boxes */
+  padding: 5px;
+  border: 1px solid black;
+  margin: 5px;
+  width:100px;
+  border-radius:5px;
+}
+
+
+/* Container styles */
+.everything {
+  position: relative; /* Positioning context for overlay */
+  height: 200px; /* Adjust height as needed */
+  width: 200px; /* Adjust width as needed */
+  margin: 0 auto; /* Center the container horizontally */
+  text-align: center; /* Center the contents horizontally */
+}
+
+/* Overlay div styles */
+.overlay {
+  position: absolute;
+  top: 33%;
+  width: 200px;
+  height: 100%;
+  text-align:center;
+}
+
+.box:hover {
+  background-color:black;
+  color:white;
+}
+
+/* Define the keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0; /* Start from completely transparent */
+  }
+  to {
+      opacity: 1; /* End with fully visible */
+  }
+}
+
+/* Apply fade-in animation to the body */
+body {
+  animation: fadeIn 1.5s ease-in forwards; /* Apply the animation with a duration of 1 second */
+}
+
+.whatever {
+  position:absolute;
+  left:20px;
+}
+
+body.dark-mode .box {
+  border:1px solid white;
+}
+
+body.dark-mode .box:hover {
+  background-color:white;
+  color:black;
+}
+
+body.dark-mode a {
+  text-decoration:underline;
+}
+
+a:hover {
+  color:white;
 }

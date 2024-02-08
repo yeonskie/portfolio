@@ -374,9 +374,11 @@ function newColour() {
     function randomPage() {
             // List of your HTML pages
             var pages = [
-                "works.html",
+            "works.html",
                 "about.html",
                 "contact.html",
+                'writing.html',
+                'writing2.html',
                 // Add more pages as needed
             ];
 
@@ -449,6 +451,36 @@ function go() {
     }
 }
 
+function toggleMode() {
+    console.log('Button clicked'); // Check if this message appears in the console
+    var body = document.body;
+    var bottomBar = document.querySelector('.bottom-bar');
+    var circleImages = document.querySelectorAll('.circle');
+
+    // Toggle between light and dark mode
+    body.classList.toggle('light-mode');
+    body.classList.toggle('dark-mode');
+
+    // Toggle bottom bar mode
+    bottomBar.classList.toggle('light-mode');
+    bottomBar.classList.toggle('dark-mode');
+
+    // Toggle button text
+    var button = document.getElementById('toggleModeButton');
+    if (body.classList.contains('light-mode')) {
+        button.textContent = 'light mode';
+        // Restore the original image sources in light mode
+        circleImages.forEach(function(image) {
+            image.src = 'circle.svg';
+        });
+    } else {
+        button.textContent = 'dark mode';
+        // Change the image sources in dark mode
+        circleImages.forEach(function(image) {
+            image.src = 'dark_circle.svg'; // Change 'dark_circle.svg' to the appropriate file name
+        });
+    }
+}
 
   
           </script>

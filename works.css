@@ -523,3 +523,8 @@ body.dark-mode .circle2 {
   /* For example: */
   content: url('whitecircle.svg'); /* Set the dark mode image */
 }
+
+
+a {
+  text-decoration:none;
+}

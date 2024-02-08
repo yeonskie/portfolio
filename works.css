@@ -389,8 +389,10 @@ button {
   padding: 5px;
   border: 1px solid black;
   margin: 5px;
-  width:100px;
+  width:150px;
+  height:70px;
   border-radius:5px;
+  justify-content: center;
 }
 
 
@@ -527,4 +529,62 @@ body.dark-mode .circle2 {
 
 a {
   text-decoration:none;
+}
+
+.content {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio {
+  position: absolute;
+  top: 150px; /* Adjust this value based on your design */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.box {
+  text-align:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box a {
+  text-decoration: none;
+  color: black;
+}
+
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns of equal width */
+  gap: 10px; /* Gap between grid items */
+  justify-content: center; /* Center align items horizontally */
+  align-items: center; /* Center align items vertically */
+}
+
+.box {
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.box a {
+  text-decoration: none;
+  color: black;
+}
+
+.portfolio {
+  position: absolute;
+  top: 50%; /* Position the top of the portfolio at the vertical center of the viewport */
+  left: 50%; /* Position the left side of the portfolio at the horizontal center of the viewport */
+  transform: translate(-50%, -50%); /* Center the portfolio both vertically and horizontally */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns of equal width */
+  gap: 10px; /* Gap between grid items */
+  padding: 0 20px; /* Add padding to the sides of the grid */
 }

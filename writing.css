@@ -488,11 +488,11 @@ body.dark-mode .box a:hover {
 
 
 .portfolio {
-  position:absolute;
-  top:150px;
-  left:100px;
-  right:50px;
-  width:300px;
+  margin-top:5%;
+  text-align:center;
+  display: flex; /* Set the container to flex display */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: space-between; /* Distribute items evenly along the main axis */
 }
 
 .content {
@@ -505,3 +505,12 @@ body.dark-mode .box a:hover {
     opacity: 0; /* Start with transparency */
     animation: fadeInAnimation 2s ease-in-out forwards; /* Apply animation */
   }
+
+  .article {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    height: 550px; /* Set a fixed height for the article */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-right: 15px; /* Add padding to accommodate scrollbar width */
+  }
+  

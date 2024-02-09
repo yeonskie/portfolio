@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>courtney te</title>
+    <link rel="stylesheet" href="pieces.css">
+    <link rel="icon" type="png" href="">
+    <link rel="stylesheet" href="https://use.typekit.net/bdh0rwu.css">
+    <link rel="stylesheet" href="https://use.typekit.net/hya6yic.css">
+    </head>
+    <body>
+      <div class="everything">
+        <img class="circle" src="circle.svg">
+        <img class="circle2" src="circle.svg">
+      <div class="content">
+        <div class="portfolio">
+          <div class="box"><a href="works.html">body1&2</a></div>
+          <div class="box"><a href="works.html">deconstructed</a></div>
+          <div class="box"><a href="works.html">falling in love</a></div>
+          <div class="box"><a href="works.html">get him back!</a></div>
+          <div class="box"><a href="works.html">carespace</a></div>
+          <div class="box"><a href="works.html">translation machine</a></div>
+          <div class="box"><a href="works.html">mindmap</a></div>
+          <div class="box"><a href="works.html">the one with the knife runs</a></div>
+          <div class="box"><a href="works.html">to myself, tomorrow</a></div>
+        </div>
+        </div>
+      </div>
+      </div>
+      <div class="top-bar">
+        <div class="column">
+            <button style="top:15px;left:15px;" id="toggleModeButton" onclick="toggleMode()">switch up the lighting?</button>
+        </div>
+        <div class="column">
+            <marquee style="width:200px;">currently working on: <a href="http://21yearsofgirlhood.com">21yearsofgirlhood</a>, <a href="http://luckyonezine.com">LUCKY ONE ZINE</a></marquee>
+        </div>
+        <div style="text-align:right;padding-right:20px;" class="column">
+            <a href="javascript:history.back()">go back</a>
+        </div>
+      <div class="container">
+        <div class="bottom-bar">
+            <div class="column"><h1 style="text-align:left;">courtney te</h1>
+            </div>
+            <div class="dropdown">
+                <div class="dropdown-selected"><< guide me >></div>
+                <div class="dropdown-list">
+                    <span><a href="http://courtneyte.com">home</a></span>
+                    <span><a href="works.html">design work</a></span>
+                    <span><a href="writing.html">writing</a></span>
+                    <span><a href="about.html">about me</a></span>
+                    <span><a href="contact.html">where to find me</a></span>
+                    <span class="link-like" onclick="randomPage()">!surprise me!</span>
+                </div>
+                <button style="border:none;" id="goButton" onclick="go()">Go</button>
+            </div>
+            <div style="text-align:right;margin-right:20px;margin-top:20px;" class="column">
+                <p style="padding-bottom:15px;">© 2024</p>
+            </div>
+        </div>
+    </div>
+  </div>
+    </div>
+  <script>
+
+
+var colour="#FF6699";
+var sparkles=50;
+var x=ox=400;
+var y=oy=300;
+var swide=800;
+var shigh=600;
+var sleft=sdown=0;
+var tiny=new Array();
+var star=new Array();
+var starv=new Array();
+var starx=new Array();
+var stary=new Array();
+var tinyx=new Array();
+var tinyy=new Array();
+var tinyv=new Array();
+ 
+window.onload=function() { if (document.getElementById) {
+  var i, rats, rlef, rdow;
+  for (var i=0; i<sparkles; i++) {
+    var rats=createDiv(3, 3);
+    rats.style.visibility="hidden";
+    rats.style.zIndex="999";
+    document.body.appendChild(tiny[i]=rats);
+    starv[i]=0;
+    tinyv[i]=0;
+    var rats=createDiv(5, 5);
+    rats.style.backgroundColor="transparent";
+    rats.style.visibility="hidden";
+    rats.style.zIndex="999";
+    var rlef=createDiv(1, 5);
+    var rdow=createDiv(5, 1);
+    rats.appendChild(rlef);
+    rats.appendChild(rdow);
+    rlef.style.top="2px";
+    rlef.style.left="0px";
+    rdow.style.top="0px";
+    rdow.style.left="2px";
+    document.body.appendChild(star[i]=rats);
+  }
+  set_width();
+  sparkle();
+}}
+ 
+function sparkle() {
+  var c;
+  if (x!=ox || y!=oy) {
+    ox=x;
+    oy=y;
+    for (c=0; c<sparkles; c++) if (!starv[c]) {
+      star[c].style.left=(starx[c]=x)+"px";
+      star[c].style.top=(stary[c]=y)+"px";
+      star[c].style.clip="rect(0px, 5px, 5px, 0px)";
+      star[c].childNodes[0].style.backgroundColor=star[c].childNodes[1].style.backgroundColor=(colour=="random")?newColour():colour;
+      star[c].style.visibility="visible";
+      starv[c]=50;
+      break;
+    }
+  }
+  for (c=0; c<sparkles; c++) {
+    if (starv[c]) update_star(c);
+    if (tinyv[c]) update_tiny(c);
+  }
+  setTimeout("sparkle()", 40);
+}
+ 
+function update_star(i) {
+  if (--starv[i]==25) star[i].style.clip="rect(1px, 4px, 4px, 1px)";
+  if (starv[i]) {
+    stary[i]+=1+Math.random()*3;
+    starx[i]+=(i%5-2)/5;
+    if (stary[i]<shigh+sdown) {
+      star[i].style.top=stary[i]+"px";
+      star[i].style.left=starx[i]+"px";
+    }
+    else {
+      star[i].style.visibility="hidden";
+      starv[i]=0;
+      return;
+    }
+  }
+  else {
+    tinyv[i]=50;
+    tiny[i].style.top=(tinyy[i]=stary[i])+"px";
+    tiny[i].style.left=(tinyx[i]=starx[i])+"px";
+    tiny[i].style.width="2px";
+    tiny[i].style.height="2px";
+    tiny[i].style.backgroundColor=star[i].childNodes[0].style.backgroundColor;
+    star[i].style.visibility="hidden";
+    tiny[i].style.visibility="visible"
+  }
+}
+ 
+function update_tiny(i) {
+  if (--tinyv[i]==25) {
+    tiny[i].style.width="1px";
+    tiny[i].style.height="1px";
+  }
+  if (tinyv[i]) {
+    tinyy[i]+=1+Math.random()*3;
+    tinyx[i]+=(i%5-2)/5;
+    if (tinyy[i]<shigh+sdown) {
+      tiny[i].style.top=tinyy[i]+"px";
+      tiny[i].style.left=tinyx[i]+"px";
+    }
+    else {
+      tiny[i].style.visibility="hidden";
+      tinyv[i]=0;
+      return;
+    }
+  }
+  else tiny[i].style.visibility="hidden";
+}
+ 
+document.onmousemove=mouse;
+function mouse(e) {
+  if (e) {
+    y=e.pageY;
+    x=e.pageX;
+  }
+  else {
+    set_scroll();
+    y=event.y+sdown;
+    x=event.x+sleft;
+  }
+}
+ 
+window.onscroll=set_scroll;
+function set_scroll() {
+  if (typeof(self.pageYOffset)=='number') {
+    sdown=self.pageYOffset;
+    sleft=self.pageXOffset;
+  }
+  else if (document.body && (document.body.scrollTop || document.body.scrollLeft)) {
+    sdown=document.body.scrollTop;
+    sleft=document.body.scrollLeft;
+  }
+  else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
+    sleft=document.documentElement.scrollLeft;
+    sdown=document.documentElement.scrollTop;
+  }
+  else {
+    sdown=0;
+    sleft=0;
+  }
+}
+ 
+window.onresize=set_width;
+function set_width() {
+  var sw_min=999999;
+  var sh_min=999999;
+  if (document.documentElement && document.documentElement.clientWidth) {
+    if (document.documentElement.clientWidth>0) sw_min=document.documentElement.clientWidth;
+    if (document.documentElement.clientHeight>0) sh_min=document.documentElement.clientHeight;
+  }
+  if (typeof(self.innerWidth)=='number' && self.innerWidth) {
+    if (self.innerWidth>0 && self.innerWidth<sw_min) sw_min=self.innerWidth;
+    if (self.innerHeight>0 && self.innerHeight<sh_min) sh_min=self.innerHeight;
+  }
+  if (document.body.clientWidth) {
+    if (document.body.clientWidth>0 && document.body.clientWidth<sw_min) sw_min=document.body.clientWidth;
+    if (document.body.clientHeight>0 && document.body.clientHeight<sh_min) sh_min=document.body.clientHeight;
+  }
+  if (sw_min==999999 || sh_min==999999) {
+    sw_min=800;
+    sh_min=600;
+  }
+  swide=sw_min;
+  shigh=sh_min;
+}
+ 
+function createDiv(height, width) {
+  var div=document.createElement("div");
+  div.style.position="absolute";
+  div.style.height=height+"px";
+  div.style.width=width+"px";
+  div.style.overflow="hidden";
+  return (div);
+}
+ 
+function newColour() {
+  var c=new Array();
+  c[0]=255;
+  c[1]=Math.floor(Math.random()*256);
+  c[2]=Math.floor(Math.random()*(256-c[1]/2));
+  c.sort(function(){return (0.5 - Math.random());});
+  return ("rgb("+c[0]+", "+c[1]+", "+c[2]+")");
+}
+// ]]>
+</script>
+ 
+<script type="text/javascript">
+    function toggleMode() {
+        console.log('Button clicked'); // Check if this message appears in the console
+        var body = document.body;
+        var bottomBar = document.querySelector('.bottom-bar');
+
+        // Toggle between light and dark mode
+        body.classList.toggle('light-mode');
+        body.classList.toggle('dark-mode');
+
+        // Toggle bottom bar mode
+        bottomBar.classList.toggle('light-mode');
+        bottomBar.classList.toggle('dark-mode');
+
+        // Toggle button text
+        var button = document.getElementById('toggleModeButton');
+        if (body.classList.contains('light-mode')) {
+            button.textContent = 'light mode';
+        } else {
+            button.textContent = 'dark mode';
+        }
+    }
+
+    // Function to toggle dropdown visibility
+    function toggleDropdown(list) {
+        list.style.display = (list.style.display === "block") ? "none" : "block";
+    }
+
+    document.addEventListener("click", function(event) {
+        var dropdowns = document.querySelectorAll(".dropdown");
+        dropdowns.forEach(function(dropdown) {
+            if (!dropdown.contains(event.target)) {
+                dropdown.querySelector(".dropdown-list").style.display = "none";
+            }
+        });
+    });
+
+    document.querySelectorAll(".dropdown").forEach(function(dropdown) {
+        var selected = dropdown.querySelector(".dropdown-selected");
+        var list = dropdown.querySelector(".dropdown-list");
+
+        // Toggle dropdown visibility when clicking on the selected option
+        selected.addEventListener("click", function() {
+            toggleDropdown(list);
+        });
+
+        // Close dropdown when clicking on an option
+        list.addEventListener("click", function(event) {
+            if (event.target.tagName === "SPAN") {
+                selected.textContent = event.target.textContent;
+                toggleDropdown(list); // Close the dropdown after selecting an option
+            }
+        });
+
+        // Close dropdown when clicking on the close button
+        dropdown.querySelector(".close-dropdown").addEventListener("click", function(event) {
+            toggleDropdown(list);
+            event.stopPropagation(); // Prevent the click event from bubbling up to the document level
+        });
+    });
+
+    function randomPage() {
+            // List of your HTML pages
+            var pages = [
+                "works.html",
+                "about.html",
+                "contact.html",
+                // Add more pages as needed
+            ];
+
+            // Generate a random index
+            var randomIndex = Math.floor(Math.random() * pages.length);
+
+            // Get the random page URL
+            var randomPageUrl = pages[randomIndex];
+
+            // Redirect to the random page
+            window.location.href = randomPageUrl;
+        }
+
+        function showHiddenDiv() {
+            var hiddenDiv = document.getElementById('hiddenDiv');
+            hiddenDiv.classList.toggle('hidden');
+        }
+
+        function randomPage() {
+            var pages = [
+                "works.html",
+                "about.html",
+                "contact.html",
+            ];
+
+            var randomIndex = Math.floor(Math.random() * pages.length);
+            var randomPageUrl = pages[randomIndex];
+
+            window.location.href = randomPageUrl;
+        }
+
+        function toggleVisibility() {
+  var hiddenDiv = document.getElementById('hiddenDiv');
+  hiddenDiv.classList.toggle('visible');
+}
+
+function go() {
+    // Get the selected option from the dropdown menu
+    var selectedOption = document.querySelector('.dropdown-selected').textContent.trim();
+
+    // Remove the additional characters from the selected option
+    selectedOption = selectedOption.replace(/<<|>>/g, '');
+
+    // Perform action based on the selected option
+    switch(selectedOption) {
+        case 'guide me':
+            // Do nothing or provide a default action
+            break;
+        case 'home':
+            window.location.href = 'index.html'; // Redirect to home page
+            break;
+        case 'design work':
+            window.location.href = 'works.html'; // Redirect to works.html
+            break;
+        case 'writing':
+            window.location.href = 'writing.html'; // Redirect to writing.html
+            break;
+        case 'about me':
+            window.location.href = 'about.html'; // Redirect to about.html
+            break;
+        case 'where to find me':
+            window.location.href = 'contact.html'; // Redirect to contact.html
+            break;
+        case '!surprise me!':
+            randomPage(); // Call the randomPage function
+            break;
+        default:
+            // Handle other cases or provide a default action
+            break;
+    }
+}
+
+
+  
+          </script>
+    </body>
+</html>

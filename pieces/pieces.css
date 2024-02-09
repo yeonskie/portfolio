@@ -1,0 +1,646 @@
+body {
+    font-family: "cofo-sans-variable", sans-serif;
+    font-variation-settings: "slnt" 0, "wght" 400;
+    background-color:#f0f0f0;
+    overflow:hidden;
+
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    padding: 5px;
+    background-color:#f0f0f0;
+    border-top: 1px solid black;
+  }
+  
+  .column {
+    flex: 1;
+    padding: 10px;
+  }
+  
+h1 {
+    font-size:17px;
+}
+
+a {
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-selected {
+    width: 200px;
+    padding: 8px;
+    border-radius: 4px;
+    text-align:center;
+    border:1px solid black;
+  }
+
+  .dropdown-selected:hover {
+    background-color:#d4d4d4;
+  }
+  
+  .dropdown-list {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #000000;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    display: none;
+    text-align:center;
+    background-color:#f0f0f0;
+  }
+
+  .dropdown-list span {
+    display: block;
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  
+
+.hidden {
+    opacity: 0;
+}
+
+.firstDiv {
+    font-family: "cofo-sans-variable", sans-serif;
+    font-variation-settings: "slnt" 0, "wght" 400;
+    background-color:white;
+    border:none;
+}
+
+body.light-mode {
+  color: black;
+  background-color: white;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  color: white;
+  background-color: black;
+}
+
+#toggleModeButton {
+  position: fixed;
+  left:5px;
+}
+
+button {
+  border:none;
+  border-radius:3px;
+  font-family: "cofo-sans-variable", sans-serif;
+  font-variation-settings: "slnt" ;
+  font-size:14px;
+}
+
+button:hover {
+  background-color:#d4d4d4;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start from completely transparent */
+  }
+  to {
+    opacity: 1; /* End with fully visible */
+  }
+}
+
+.bottom-bar.light-mode {
+  background-color: #f0f0f0; /* Light mode background color */
+  color: black; /* Light mode text color */
+}
+
+.bottom-bar.dark-mode {
+  background-color: black; /* Dark mode background color */
+  color: white; /* Dark mode text color */
+}
+
+/* Light mode button styles */
+body.light-mode button {
+  color: black; /* Button text color in light mode */
+  background-color: white; /* Button background color in light mode */
+  border: 1px solid black;
+}
+
+/* Dark mode button styles */
+body.dark-mode button {
+  color: white; /* Button text color in dark mode */
+  background-color: black; /* Button background color in dark mode */
+  border: 1px solid white;
+}
+
+/* Light mode dropdown selected styles */
+body.light-mode .dropdown-selected {
+  color: black; /* Text color of the selected item in light mode */
+  background-color: white; /* Background color of the selected item in light mode */
+  border:1px solid black;
+}
+
+/* Dark mode dropdown selected styles */
+body.dark-mode .dropdown-selected {
+  color: white; /* Text color of the selected item in dark mode */
+  background-color: black; /* Background color of the selected item in dark mode */
+  border:1px solid #f0f0f0;
+}
+
+body.light-mode .dropdown-list {
+  color:black;
+  background-color:white;
+  border-radius:5px;
+}
+
+
+body.dark-mode .dropdown-list {
+  color:white;
+  background-color:black;
+  border: 1px solid white;
+  border-radius:5px;
+}
+
+body.light-mode a {
+  text-decoration:none;
+  color:black;
+}
+
+body.dark-mode a {
+  text-decoration:none;
+  color:white;
+}
+
+a {
+  text-decoration:none;
+  color:black;
+}
+
+.dropdown-list span:hover {
+  background-color: #d4d4d4;
+  color:black;
+}
+
+body.light-mode .dropdown-list span:hover {
+  background-color: black;
+  color:#d4d4d4;
+}
+
+body.light-mode .dropdown-list a:hover {
+  color:black;
+}
+
+
+body.dark-mode .dropdown-list span:hover {
+  background-color: #d4d4d4;
+  color:black;
+}
+
+body.dark-mode .bottom-bar {
+  border-top: 1px solid white;
+}
+
+.hidden {
+  right:0;
+  font-family: "cofo-sans-variable", sans-serif;
+  font-variation-settings: "slnt" 0, "wght" 400;
+}
+
+.hiddendiv {
+  position:absolute;
+  left:100px;
+  top:100px;
+  bottom:100px;
+  right:100px;
+
+}
+
+/* Existing CSS styles */
+
+/* Style for the span on hover */
+.dropdown-list span:hover {
+  background-color: #ffffff; /* White background */
+  color: #000000; /* Black text */
+}
+
+.top-bar {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:50px;
+  border-bottom:1px solid black;
+  background-color:#f0f0f0;
+}
+
+
+body.dark-mode .top-bar {
+  border-bottom: 1px solid white;
+  background-color:black;
+}
+
+.bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 50px; /* Keep the height the same as top-bar */
+  width: 100%;
+  background-color: #f0f0f0;
+  border-top: 1px solid black;
+}
+
+.bottom-bar .column {
+  flex: 1; /* Make the column flexible */
+  padding: 10px;
+  text-align: center; /* Align text in the center */
+}
+
+.bottom-bar h1 {
+  font-size: 17px; /* Apply font size */
+}
+
+/* Additional styles for the top-bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px; /* Define the height */
+  width: 100%;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid black;
+}
+
+.top-bar .column {
+  flex: 1; /* Make the column flexible */
+  padding: 10px;
+  text-align: center; /* Align text in the center */
+}
+
+.top-bar h1 {
+  font-size: 17px; /* Apply font size */
+}
+
+marquee a {
+  text-decoration:underline;
+}
+
+marquee a:hover {
+  text-decoration:underline;
+  font-style:italic;
+}
+
+.content {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  position:absolute;
+  right:10px;
+  top:65px;
+}
+
+.visible {
+  opacity: 1;
+}
+
+h1 {
+  font-size:150px;
+}
+
+marquee h1 {
+  height:5%;
+}
+
+button {
+  font-family: "cofo-sans-variable", sans-serif;
+  font-variation-settings: "slnt" 0, "wght" 400;
+}
+/* Add this to your existing stylesheet */
+
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-list {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #000000;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  display: none;
+  text-align:center;
+}
+
+#goButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.90);
+  width:100%;
+  height:100%;
+}
+
+.text {
+  display: flex;
+  text-align: center;
+
+}
+
+/* Style for each box */
+.box {
+  flex: 1; /* Distribute space evenly among the boxes */
+  padding: 5px;
+  border: 1px solid black;
+  margin: 5px;
+  width:150px;
+  height:70px;
+  border-radius:5px;
+  justify-content: center;
+}
+
+
+/* Overlay div styles */
+.overlay {
+  position: absolute;
+  top: 27%;
+  width: 200px;
+  height: 100%;
+  text-align:center;
+}
+
+.box:hover {
+  background-color:black;
+  color:white;
+}
+
+/* Define the keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0; /* Start from completely transparent */
+  }
+  to {
+      opacity: 1; /* End with fully visible */
+  }
+}
+
+/* Apply fade-in animation to the body */
+body {
+  animation: fadeIn 1.5s ease-in forwards; /* Apply the animation with a duration of 1 second */
+}
+
+.whatever {
+  position:absolute;
+  left:20px;
+}
+
+body.dark-mode .box {
+  border:1px solid white;
+}
+
+body.dark-mode .box:hover {
+  background-color:white;
+  color:black;
+}
+
+body.dark-mode a {
+  text-decoration:underline;
+}
+
+a:hover {
+  color:black;
+}
+
+.box a:hover {
+  color:white;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0; /* Start from fully transparent */
+  }
+  to {
+    opacity: 1; /* End with full opacity */
+  }
+}
+
+.content {
+  opacity: 0; /* Start with transparency */
+  animation: fadeInAnimation 2s ease-in-out forwards; /* Apply animation */
+}
+
+h2 {
+  animation: fadeInAnimation 3s ease-in-out forwards;
+}
+
+p {
+  animation: fadeInAnimation 5s ease-in-out forwards;
+}
+
+.text{
+  animation: fadeInAnimation 6s ease-in-out forwards;
+}
+
+body.dark-mode .box a:hover {
+  color:black;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:100%;
+}
+
+
+.circle2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:105%;
+  height:105%;
+}
+
+
+.portfolio {
+  position:absolute;
+  top:150px;
+  left:75px
+}
+
+body.dark-mode .content {
+  background-color: rgba(0, 0, 0, 0.90)
+}
+
+/* Light mode styles for circle images */
+.circle,
+.circle2 {
+  /* Add your light mode styles here */
+  /* For example: */
+  content: url('circle.svg'); /* Set the default image */
+}
+
+/* Dark mode styles for circle images */
+body.dark-mode .circle,
+body.dark-mode .circle2 {
+  /* Add your dark mode styles here */
+  /* For example: */
+  content: url('whitecircle.svg'); /* Set the dark mode image */
+}
+
+
+a {
+  text-decoration:none;
+}
+
+.content {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio {
+  position: absolute;
+  top: 150px; /* Adjust this value based on your design */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.box {
+  text-align:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box a {
+  text-decoration: none;
+  color: black;
+}
+
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns of equal width */
+  gap: 10px; /* Gap between grid items */
+  justify-content: center; /* Center align items horizontally */
+  align-items: center; /* Center align items vertically */
+}
+
+.image-normal {
+  position: static;
+}
+
+.image-center-expanded {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:100vh;
+}
+
+
+.box {
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.box a {
+  text-decoration: none;
+  color: black;
+}
+
+.portfolio {
+  position: absolute;
+  top: 50%; /* Position the top of the portfolio at the vertical center of the viewport */
+  left: 50%; /* Position the left side of the portfolio at the horizontal center of the viewport */
+  transform: translate(-50%, -50%); /* Center the portfolio both vertically and horizontally */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns of equal width */
+  gap: 10px; /* Gap between grid items */
+  padding: 0 20px; /* Add padding to the sides of the grid */
+}
+
+img {
+  width:400px;
+}
+
+.carousel-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+}
+
+.carousel-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.carousel-content img {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+.portfolio-image:hover {
+    cursor:pointer;
+}

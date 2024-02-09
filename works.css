@@ -600,3 +600,12 @@ a {
   font-style:italic;
   text-decoration:underline;
 }
+
+.intro {
+  position: absolute;
+  top: 25vh; /* Align to the top */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%);
+  width: auto; /* Or specify a width */
+  text-align: center;
+}

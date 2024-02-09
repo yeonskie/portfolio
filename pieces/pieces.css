@@ -314,9 +314,15 @@ marquee a:hover {
   font-style:italic;
 }
 
-.content {
+#overlay {
   position: fixed;
+  top: 0;
   left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  z-index: 9999; /* Ensure it appears above other elements */
+
 }
 
 .hidden {
@@ -370,12 +376,6 @@ button {
   right: 0;
 }
 
-.content {
-  background-color: rgba(255, 255, 255, 0.90);
-  width:100%;
-  height:100%;
-}
-
 .text {
   display: flex;
   text-align: center;
@@ -388,7 +388,7 @@ button {
   padding: 5px;
   border: 1px solid black;
   margin: 5px;
-  width:150px;
+  width:200px;
   height:70px;
   border-radius:5px;
   justify-content: center;
@@ -485,18 +485,21 @@ body.dark-mode .box a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width:100%;
+  width: 100%;
+  height: 100%;
+  background-image: url('circle.svg'); /* Use background-image property */
 }
-
 
 .circle2 {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width:105%;
-  height:105%;
+  width: 105%;
+  height: 105%;
+  background-image: url('circle.svg'); /* Use background-image property */
 }
+
 
 
 .portfolio {
@@ -556,14 +559,17 @@ a {
   text-decoration: none;
   color: black;
 }
-
 .portfolio {
+  position: absolute;
+  top: 50%; /* Position the top of the portfolio at the vertical center of the viewport */
+  left: 50%; /* Position the left side of the portfolio at the horizontal center of the viewport */
+  transform: translate(-50%, -50%); /* Center the portfolio both vertically and horizontally */
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three columns of equal width */
+  grid-template-columns: repeat(2, 1fr); /* Two columns of equal width */
   gap: 10px; /* Gap between grid items */
-  justify-content: center; /* Center align items horizontally */
-  align-items: center; /* Center align items vertically */
+  padding: 0 20px; /* Add padding to the sides of the grid */
 }
+
 
 .image-normal {
   position: static;
@@ -574,9 +580,8 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width:100vh;
+  width:110vh;
 }
-
 
 .box {
   padding: 5px;
@@ -644,4 +649,14 @@ img {
     cursor:zoom-in;
 }
 
+.box {
+  padding:20px;
 
+}
+
+.hidden-div {
+  display: none;
+  position:absolute;
+  opacity: 0;
+  transition: opacity 0.5s;
+}

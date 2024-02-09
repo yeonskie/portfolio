@@ -316,7 +316,6 @@ marquee a:hover {
 
 .content {
   position: fixed;
-  top: 0;
   left: 0;
 }
 
@@ -642,5 +641,7 @@ img {
 }
 
 .portfolio-image:hover {
-    cursor:pointer;
+    cursor:zoom-in;
 }
+
+

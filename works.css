@@ -594,3 +594,9 @@ a {
   background-color:black;
   color:white;
 }
+
+
+.box:hover a:hover {
+  font-style:italic;
+  text-decoration:underline;
+}

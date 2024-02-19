@@ -9,7 +9,7 @@
     </head>
     <body>
       <div class="everything">
-        <div class="circle"></div> <!-- Add the circle background -->
+        <div class="circle"></div>
         <img class="circle2" src="circle.svg">
       <div id="content">
         <div class="portfolio">
@@ -22,13 +22,12 @@
           <div class = "portfolio-image">
             <img src="new/5carespace/3.png">
             </div>
-            <div style="margin-left:20px;" class="portfolio-image">
-                <i><b><u>get him back!</u></b></i><br>
-                Kinetic Typography<br>
-                Adobe After Effects 2022<br>
-                December 2023<br>
-                1929X1080px<br><br>
-                A kinetic typography lyric video of Olivia Rodrigo's "Get Him Back", used to explore the relationship between type, graphics, and motion.
+            <div style="width:200px;cursor:default;" class="portfolio-image">
+                <i><b><u>carespace</u></b></i><br>
+                3-D Model<br>
+                Blender<br>
+                November 2023<br><br>
+                A 3-D space designed for the care and use of psychiatrist hospital patients.
                 </div>
             <div class = "portfolio-image">
                 <img src="new/5carespace/4.png">
@@ -491,6 +490,35 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     
+    document.addEventListener('DOMContentLoaded', () => {
+    var portfolioImages = document.querySelectorAll('.portfolio .portfolio-image img');
+
+    portfolioImages.forEach((image) => {
+        image.classList.add('image-normal');
+        image.addEventListener('click', () => {
+            image.classList.toggle('image-expanded'); // Toggle the class on click
+        });
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    var portfolioImages = document.querySelectorAll('.portfolio .portfolio-image img');
+
+    portfolioImages.forEach((image) => {
+        image.classList.add('image-normal');
+        image.addEventListener('click', () => {
+            image.classList.add('image-center-expanded');
+        });
+
+        document.addEventListener('click', () => {
+            if (!image.contains(event.target)) {
+                image.classList.remove('image-center-expanded');
+            }
+        })
+    });
+});
+
           </script>
     </body>
 </html>

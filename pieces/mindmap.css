@@ -2,7 +2,7 @@ body {
     font-family: "cofo-sans-variable", sans-serif;
     font-variation-settings: "slnt" 0, "wght" 400;
     background-color:#f0f0f0;
-    overflow:scroll;
+    overflow:hidden;
 
 }
 
@@ -314,6 +314,17 @@ marquee a:hover {
   font-style:italic;
 }
 
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  z-index: 9999; /* Ensure it appears above other elements */
+
+}
+
 .hidden {
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -383,6 +394,15 @@ button {
   justify-content: center;
 }
 
+
+/* Overlay div styles */
+.overlay {
+  position: absolute;
+  top: 27%;
+  width: 200px;
+  height: 100%;
+  text-align:center;
+}
 
 .box:hover {
   background-color:black;
@@ -480,6 +500,14 @@ body.dark-mode .box a:hover {
   background-image: url('circle.svg'); /* Use background-image property */
 }
 
+
+
+.portfolio {
+  position:absolute;
+  top:150px;
+  left:75px
+}
+
 body.dark-mode .content {
   background-color: rgba(0, 0, 0, 0.90)
 }
@@ -513,6 +541,13 @@ a {
   align-items: center;
 }
 
+.portfolio {
+  position: absolute;
+  top: 150px; /* Adjust this value based on your design */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .box {
   text-align:center;
   display: flex;
@@ -524,10 +559,21 @@ a {
   text-decoration: none;
   color: black;
 }
+.portfolio {
+  position: absolute;
+  top: 50%; /* Position the top of the portfolio at the vertical center of the viewport */
+  left: 50%; /* Position the left side of the portfolio at the horizontal center of the viewport */
+  transform: translate(-50%, -50%); /* Center the portfolio both vertically and horizontally */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns of equal width */
+  gap: 10px; /* Gap between grid items */
+  padding: 0 20px; /* Add padding to the sides of the grid */
+}
 
 
 .image-normal {
   position: static;
+  width:750px;
 }
 
 .image-center-expanded {
@@ -535,9 +581,8 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width:500px;
+  width:140vh;
 }
-
 
 .box {
   padding: 5px;
@@ -557,11 +602,13 @@ a {
   left: 50%; /* Position the left side of the portfolio at the horizontal center of the viewport */
   transform: translate(-50%, -50%); /* Center the portfolio both vertically and horizontally */
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Three columns of equal width */
-  gap: 5px; /* Gap between grid items */
-  padding: 10px 10px; /* Add padding to the sides of the grid */
-  overflow-y:scroll;
-  grid-column-gap:5px;
+  grid-template-columns: repeat(3, 1fr); /* Three columns of equal width */
+  gap: 10px; /* Gap between grid items */
+  padding: 0 20px; /* Add padding to the sides of the grid */
+}
+
+img {
+  width:400px;
 }
 
 .carousel-overlay {
@@ -613,15 +660,4 @@ a {
   position:absolute;
   opacity: 0;
   transition: opacity 0.5s;
-}
-
-
-.portfolio img {
-  width: 300px;
-  object-fit: cover;
-}
-
-.portfolio .portfolio-image img.image-expanded {
-  transform: scale(2.0); /* Increase the scale to make it bigger */
-  transition: transform 0.3s ease; /* Add transition for smooth animation */
 }

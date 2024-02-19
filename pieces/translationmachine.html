@@ -2,26 +2,30 @@
 <html>
     <head>
     <title>courtney te</title>
-    <link rel="stylesheet" href="works.css">
+    <link rel="stylesheet" href="translationmachine.css">
     <link rel="icon" type="png" href="">
     <link rel="stylesheet" href="https://use.typekit.net/bdh0rwu.css">
     <link rel="stylesheet" href="https://use.typekit.net/hya6yic.css">
     </head>
     <body>
       <div class="everything">
-        <img class="circle" src="circle.svg">
+        <div class="circle"></div> <!-- Add the circle background -->
         <img class="circle2" src="circle.svg">
-      <div class="content">
+      <div id="content">
         <div class="portfolio">
-          <div class="box"><a href="pieces/body.html">body1&2</a></div>
-          <div class="box"><a href="pieces/deconstructed.html">deconstructed</a></div>
-          <div class="box"><a href="pieces/love.html">falling in love</a></div>
-          <div class="box"><a href="pieces/gethimback.html">get him back!</a></div>
-          <div class="box"><a href="pieces/carespace.html">carespace</a></div>
-          <div class="box"><a href="pieces/translationmachine.html">translation machine</a></div>
-          <div class="box"><a href="pieces/mindmap.html">mind map</a></div>
-          <div class="box"><a href="pieces/knife.html">the one with the knife runs</a></div>
-          <div class="box"><a href="pieces/tomyself.html">to myself, tomorrow</a></div>
+            <div class="portfolio-image">
+                <img src="new/7translationmachine/1.jpg">
+               </div>
+          <div class = "portfolio-image">
+            <div style="width:200px;" class="intro"><i><b><u>Translation Machine</u></b></i><br>
+              Poster<br>
+              Adobe Illustrator 2023<br>
+              February 2023<br>
+              24” x 32”<br>
+                <br><br>
+                At the starting place of a person’s journey through life, they bleed their emotions blue, translating their emotions from their inner body to the external world as they traverse the maze.
+           </div>
+           </div>
         </div>
         </div>
       </div>
@@ -44,10 +48,10 @@
                 <div class="dropdown-selected"><< guide me >></div>
                 <div class="dropdown-list">
                     <span><a href="http://courtneyte.com">home</a></span>
-                    <span><a href="works.html">design work</a></span>
-                    <span><a href="writing.html">writing</a></span>
-                    <span><a href="about.html">about me</a></span>
-                    <span><a href="contact.html">where to find me</a></span>
+                    <span><a href="../works.html">design work</a></span>
+                    <span><a href="../writing.html">writing</a></span>
+                    <span><a href="../about.css">about me</a></span>
+                    <span><a href="../contact.html">where to find me</a></span>
                     <span class="link-like" onclick="randomPage()">!surprise me!</span>
                 </div>
                 <button style="border:none;" id="goButton" onclick="go()">Go</button>
@@ -58,6 +62,11 @@
         </div>
     </div>
   </div>
+  <div class="carousel-overlay">
+    <div class="carousel-content"></div>
+    <button class="close">Close</button>
+</div>
+    </div>
     </div>
   <script>
 
@@ -253,6 +262,24 @@ function newColour() {
 </script>
  
 <script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', () => {
+        var portfolioImages = document.querySelectorAll('.portfolio .portfolio-image img');
+    
+        portfolioImages.forEach((image) => {
+            image.classList.add('image-normal');
+            image.addEventListener('click', () => {
+                image.classList.add('image-center-expanded');
+            });
+
+            document.addEventListener('click', () => {
+                if (!image.contains(event.target)) {
+                    image.classList.remove('image-center-expanded');
+                }
+            })
+        });
+
+    });
     function toggleMode() {
         console.log('Button clicked'); // Check if this message appears in the console
         var body = document.body;
@@ -392,7 +419,64 @@ function go() {
 }
 
 
-  
+document.addEventListener("DOMContentLoaded", function() {
+            var images = document.querySelectorAll(".portfolio img");
+            images.forEach(function(image) {
+                image.addEventListener("click", function() {
+                    // Display the clicked image in the carousel overlay
+                    var imageUrl = this.src;
+                    displayImageInCarousel(imageUrl);
+                });
+            });
+        });
+
+        // Function to display the clicked image in the carousel overlay
+        function displayImageInCarousel(imageUrl) {
+            var carouselContent = document.querySelector(".carousel-content");
+            carouselContent.innerHTML = '<img src="' + imageUrl + '" alt="Carousel Image">';
+            var overlay = document.querySelector(".carousel-overlay");
+            overlay.style.display = "block"; // Show the overlay
+        }
+
+        // Function to close the carousel overlay
+        document.querySelector(".close").addEventListener("click", function() {
+            var overlay = document.querySelector(".carousel-overlay");
+            overlay.style.display = "none"; // Hide the overlay
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var images = document.querySelectorAll(".portfolio img");
+            images.forEach(function(image) {
+                image.addEventListener("click", function() {
+                    // Display the clicked image in the carousel overlay
+                    var imageUrl = this.src;
+                    var carouselContent = document.querySelector(".carousel-content");
+                    carouselContent.innerHTML = '<img src="' + imageUrl + '" alt="Carousel Image">';
+                    var overlay = document.querySelector(".carousel-overlay");
+                    overlay.style.display = "block"; // Show the overlay
+                });
+            });
+        });
+
+        // Function to close the carousel overlay
+        document.querySelector(".close").addEventListener("click", function() {
+            var overlay = document.querySelector(".carousel-overlay");
+            overlay.style.display = "none"; // Hide the overlay
+        });
+        function displayImageInCarousel(imageUrl) {
+        var carouselContent = document.querySelector(".carousel-content");
+        carouselContent.innerHTML = '<img src="' + imageUrl + '" alt="Carousel Image">';
+        var overlay = document.querySelector(".carousel-overlay");
+        overlay.style.display = "block"; // Show the overlay
+    }
+
+    // Function to close the carousel overlay
+    document.querySelector(".close").addEventListener("click", function() {
+        var overlay = document.querySelector(".carousel-overlay");
+        overlay.style.display = "none"; // Hide the overlay
+    });
+
+    
           </script>
     </body>
 </html>
